@@ -11,7 +11,7 @@ if num1>num2 and num1>num3:
     if num2<num3:
         menor=num2
     else:
-    menor=num3
+        menor=num3
 
 elif num2>num3:
     mayor=num2
@@ -22,4 +22,10 @@ elif num2>num3:
         menor=num3
 
 else:
-mayor=num3
+    mayor=num3
+    if num1<num2:
+        menor=num1
+    else:
+        menor=num2
+
+print(mayor,menor)
