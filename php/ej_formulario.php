@@ -4,7 +4,11 @@
 <meta charset="UTF-8">
 </head>
 <body>
-	<p>Hola <?php echo $_GET['txtNombre'] ?>, aunque tienes <?php echo $_GET['txtEdad'] ?> 
-    años, estás hecho un chaval.</p>
+    <form action="saludo.php" method="get">
+            <input type="text" name="txtNombre" id="txtNombre"><br>
+            <input type="number" name="txtEdad" id="txtEdad"><br>
+            <input type="submit" value="Enviar">
+    </form>
+
 </body>
 </html>
