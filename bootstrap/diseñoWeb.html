@@ -25,12 +25,12 @@
 
     <div class="container-fluid">
 
-        <div class="text-bg-dark text-center align-middle pt-5 pb-5 mb-3">
+        <div class="text-bg-dark text-center align-middle pt-5 pb-5">
             <h1 class="fs-1">Diseño de interfaces web</h1>
             <p>Examen de bootstrap 6 de noviembre de 2017</p>
         </div>
 
-        <nav class="navbar bg-dark border-bottom border-body navbar-expand-lg rounded-1" data-bs-theme="dark">
+        <nav class="navbar bg-dark border-bottom border-body navbar-expand-lg rounded-1 my-3" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Ejercicio1</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,7 +68,7 @@
 
 
 
-        <div id="carouselExample" class="carousel slide d-block d-sm-none mt-3">
+        <div id="carouselExample" class="carousel slide d-block d-sm-none">
 
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -140,21 +140,20 @@
         <br>
 
     <form>
-
-        <label id="nombre">nombre</label>
-
-        <input type="text" placeholder="Nombre">
-        <br>
-        <label id="apellidos">Apellidos</label>
-        <input type="text" placeholder="apellidos">
-
-        <label id="telefono">Telefono</label>
-        <input type="text" placeholder="Telefono">
-
-        <label id="fecha">F. Nacimiento</label>
-        
-
-    </form>
+  <div class="mb-3">
+    <label for="Nombre" class="form-label">Nombre</label>
+    <input type="text" class="form-control" id="Nombre" placeholder="Nombre">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
     </div>
     
 
