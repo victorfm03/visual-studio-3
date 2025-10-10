@@ -21,3 +21,8 @@ for (k,v) in listaCuentas.items():
     lista_tuplas.append((k,sum(v)))
 
 print(lista_tuplas)
+
+lista_tuplas.sort(key=lambda elemento: elemento[1])
+
+print("la cuenta de menor saldo es: ", lista_tuplas[0])
+print("la cuenta de mayor saldo es: ", lista_tuplas[-1])
