@@ -59,8 +59,14 @@
                 
             </ul>
             <form class="d-flex" role="search">
+              <div class="row g-3 align-items-center ">
+                <div class="col-sm-auto col-12">
                 <input class="form-control me-2 bg-white text-black" type="search" aria-label="Search"/>
+                </div>
+                <div class="col-sm-auto col-12">
                 <button class="btn btn-danger" type="submit">buscar</button>
+                </div>
+                </div>
             </form>
             </div>
             </div>
@@ -139,7 +145,7 @@
 
     <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
 
-        <fo>
+      
   <div class="row g-3 align-items-center mb-3">
   <div class="col-sm-1 col-12">
     <label for="nombre" class="col-form-label fw-bold pb-0">nombre:</label>
@@ -252,7 +258,7 @@
   
 </div>
 
-<div class="row g-3 align-items-center mb-3">
+<div class="row g-3 align-items-md-start mb-3">
   <div class="col-sm-1 col-12">
     <label for="direccion" class="col-form-label fw-bold pb-0">direccion:</label>
   </div>
@@ -260,6 +266,46 @@
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="direccion"></textarea>
   </div>
   </div>
+
+<div class="row g-3 align-items-center">
+  <div class="col-sm-1 col-12">
+    <label for="genero" class="col-form-label fw-bold pb-0">genero:</label>
+  </div>
+  
+    <div class="col-sm-auto col-12 mb-2">
+      <input class="form-check-input" type="radio" name="radioDefault" id="masculino">
+  <label class="form-check-label" for="masculino">Masculino</label>
+  </div>
+
+  <div class="col-sm-auto col-12 mt-2">
+  
+  <input class="form-check-input" type="radio" name="radioDefault" id="femenino">
+  <label class="form-check-label" for="femenino">femenino</label>
+  
+</div>
+
+
+</div>
+
+<div class="row g-3 align-items-center my-3">
+  <div class="col-sm-auto offset-sm-1 mb-2">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck1">
+        <label class="form-check-label" for="gridCheck1">
+          Enviar noticias
+        </label>
+      </div>
+    </div>
+</div>
+
+<div class="row g-3 align-items-center mb-5">
+  <div class="col-sm-auto offset-sm-1">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck1">
+        <label class="form-check-label" for="gridCheck1">Acepto <label class="text-info">Terminos y condiciones</label>.</label>
+      </div>
+    </div>
+</div>
 
 <div class="row g-3 align-items-center mb-3">
     <div class="col-auto offset-sm-1">
