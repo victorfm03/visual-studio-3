@@ -17,6 +17,10 @@
   background-color: white;   /* Color del punto activo */
 }
 
+.nav-item .nav-link.active::before{
+  background-color: black !important;
+}
+
     </style>
   </head>
 
@@ -30,43 +34,46 @@
             <p>Examen de bootstrap 6 de noviembre de 2017</p>
         </div>
 
-        <nav class="navbar bg-dark border-bottom border-body navbar-expand-lg rounded-1 my-3" data-bs-theme="dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Ejercicio1</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar bg-dark border-bottom border-body navbar-expand-lg rounded-1 my-3 py-1" data-bs-theme="dark">
+        <div class="container-fluid px-0">
+            <a class="navbar-brand ps-3" href="#">Ejercicio1</a>
+            <button class="navbar-toggler my-1 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">inicio</a>
+              <hr class="d-block d-sm-none border-2 border-black">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item bg-black">
+                <a class="nav-link active ps-3" aria-current="page" href="#">inicio</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Comunicaciones</a>
-                </li>
-
-                <li class="nav-item">
-                <a class="nav-link" href="#">ventas</a>
+                <a class="nav-link ps-3" href="#">Comunicaciones</a>
                 </li>
 
                 <li class="nav-item">
-                <a class="nav-link" href="#">sobre nosotros</a>
+                <a class="nav-link ps-3" href="#">ventas</a>
                 </li>
 
                 <li class="nav-item">
-                <a class="nav-link" href="#">contacto</a>
+                <a class="nav-link ps-3" href="#">sobre nosotros</a>
+                </li>
+
+                <li class="nav-item">
+                <a class="nav-link ps-3" href="#">contacto</a>
                 </li>
                 
             </ul>
-            <form class="d-flex" role="search">
+            <form role="search">
+              <hr class="d-block d-sm-none border-2 border-black">
               <div class="row g-3 align-items-center ">
-                <div class="col-sm-auto col-12">
-                <input class="form-control me-2 bg-white text-black" type="search" aria-label="Search"/>
+                <div class="col-lg-auto col-12">
+                <input class="bg-white text-black me-0 form-control form-control-sm" type="search" aria-label="Search"/>
                 </div>
-                <div class="col-sm-auto col-12">
-                <button class="btn btn-danger" type="submit">buscar</button>
+                <div class="col-lg-auto col-12">
+                <button class="btn btn-danger  btn-sm me-2" type="submit">buscar</button>
                 </div>
                 </div>
+                <hr class="d-block d-sm-none border-2 border-black">
             </form>
             </div>
             </div>
@@ -147,7 +154,7 @@
 
       
   <div class="row g-3 align-items-center mb-3">
-  <div class="col-sm-1 col-12">
+  <div class="col-lg-auto col-12 offset-lg-1">
     <label for="nombre" class="col-form-label fw-bold pb-0">nombre:</label>
   </div>
   <div class="col mt-0 mt-sm-auto">
@@ -159,7 +166,7 @@
 </div>
 
 <div class="row g-3 align-items-center mb-3">
-  <div class="col-sm-1 col-12">
+  <div class="col-lg-auto col-12 offset-lg-1">
     <label for="apellido" class="col-form-label fw-bold pb-0">apellido:</label>
   </div>
   <div class="col mt-0 mt-sm-auto">
@@ -171,7 +178,7 @@
 </div>
 
 <div class="row g-3 align-items-center mb-3">
-  <div class="col-sm-1 col-12">
+  <div class="col-lg-auto col-12 offset-lg-1">
     <label for="telefono" class="col-form-label fw-bold pb-0 ">telefono:</label>
   </div>
   <div class="col mt-0 mt-sm-auto">
@@ -179,10 +186,10 @@
   </div>
 
   
-  <div class="col-sm-auto col-12">
-    <label for="f_nacimiento" class="col-form-label fw-bold ">f.nacimiento:</label>
+  <div class="col-lg-auto col-12">
+    <label for="f_nacimiento" class="col-form-label fw-bold py-0">f.nacimiento:</label>
   </div>
-  <div class="col-sm-auto col-12 mt-sm-auto mt-0">
+<div class="col-lg-auto col-12 mt-lg-auto mt-0">
     <select class="form-select" aria-label="Default select example">
   <option selected>Dia</option>
   <option value="1">1</option>
@@ -221,7 +228,7 @@
 
   </div>
 
-  <div class="col-sm-auto col-12 mt-0 mt-sm-auto">
+<div class="col-lg-auto col-12 mt-lg-auto mt-0">
     <select class="form-select" aria-label="Default select example">
   <option selected>Mes</option>
   <option value="1">Ene</option>
@@ -242,7 +249,7 @@
 
   </div>
 
-  <div class="col-sm-auto col-12 mt-0 mt-sm-auto">
+<div class="col-lg-auto col-12 mt-lg-auto mt-0">
     <select class="form-select" aria-label="Default select example">
   <option selected>a&ntilde;o</option>
   <option value="1">2020</option>
@@ -258,21 +265,21 @@
   
 </div>
 
-<div class="row g-3 align-items-md-start mb-3">
-  <div class="col-sm-1 col-12">
+<div class="row g-3 align-items-md-start my-3">
+    <div class="col-lg-auto col-12 offset-lg-1">
     <label for="direccion" class="col-form-label fw-bold pb-0">direccion:</label>
   </div>
-  <div class="col mt-0 mt-sm-3">
+  <div class="col mt-0 mt-sm-auto">
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="direccion"></textarea>
   </div>
   </div>
 
 <div class="row g-3 align-items-center">
-  <div class="col-sm-1 col-12">
+  <div class="col-lg-auto col-12 offset-lg-1">
     <label for="genero" class="col-form-label fw-bold pb-0">genero:</label>
   </div>
   
-    <div class="col-sm-auto col-12 mb-2">
+    <div class="col-lg-auto col-12 mb-0 mb-lg-2">
       <input class="form-check-input" type="radio" name="radioDefault" id="masculino">
   <label class="form-check-label" for="masculino">Masculino</label>
   </div>
@@ -288,7 +295,7 @@
 </div>
 
 <div class="row g-3 align-items-center my-3">
-  <div class="col-sm-auto offset-sm-1 mb-2">
+  <div class="col-lg-auto offset-lg-1 mb-2">
       <div class="form-check">
         <input class="form-check-input" type="checkbox" id="gridCheck1">
         <label class="form-check-label" for="gridCheck1">
@@ -299,7 +306,7 @@
 </div>
 
 <div class="row g-3 align-items-center mb-5">
-  <div class="col-sm-auto offset-sm-1">
+  <div class="col-lg-auto offset-lg-1">
       <div class="form-check">
         <input class="form-check-input" type="checkbox" id="gridCheck1">
         <label class="form-check-label" for="gridCheck1">Acepto <label class="text-info">Terminos y condiciones</label>.</label>
@@ -308,7 +315,7 @@
 </div>
 
 <div class="row g-3 align-items-center mb-3">
-    <div class="col-auto offset-sm-1">
+    <div class="col-auto offset-lg-1">
   <button type="submit" class="btn btn-primary">Enviar</button>
   </div>
     <div class="col-auto">
