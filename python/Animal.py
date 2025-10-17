@@ -24,6 +24,32 @@ class Animal:
         
         return "Animal [id: "+str(self.__id_animal)+", especie: "+self.__especie+"]"
 
+class Herbivoro(Animal):
+    def __init__(self, id_animal, especie, kg_dia):
+        Animal.__init__(self, id_animal, especie)
+        self.__kg_dia=kg_dia
+
+    def __str__(self){
+        return "Herbivoro[id_animal: "+str(self.id_animal)", especie: "+self.especie+" ]"
+    }
+
+class Carnivoro(Animal):
+    def __init__(self, id_animal, especie, peligroso):
+        Animal.__init__(self, id_animal, especie)
+        self.__peligroso=peligroso
+
+
+    @property
+    def peligroso():
+        return self.__peligroso
+
+    
+
+    def __str__(self){
+        return "Herbivoro[id_animal: "+str(self.id_animal)", especie: "+self.especie+" ]"
+    }
+
 animal1= Animal(1,"Pez")
 animal2= Animal(2,"Ave")
 animal1.id_animal=5
+animal2.especie="m"
