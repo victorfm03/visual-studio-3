@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+    <h2>Conversor de millas a km</h2>
+    <form>
+            <input type="text" name="millas2" id="millas2"><br>
+            <input type="submit" value="calcular">
+    </form>
+
+    <script>
+        frmConversor.addEventListener("submit",validarDatos);
+
+        function validarDatos(){
+            let num=parseInt(frmConversor.num.value.trim());
+
+            if(isNaN(num)){
+                
+                event.preventDefault();
+                alert(num+" no es un numero");
+            }else if(num<1 || num>100){
+                event.preventDefault();
+                alert(num," debe estar entre 1 y 100")
+            }
+        }
+    </script>
+</body>
+</html>
