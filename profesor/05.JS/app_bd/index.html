@@ -43,7 +43,7 @@
 						</li>
 
 						<li><a class="dropdown-item" href="#" id="mnuBuscarComponente">Buscar un componente</a></li>
-						<li><a class="dropdown-item" href="#" >Listado de componente</a></li>
+						<li><a class="dropdown-item" href="#" id="mnuListadoComponente">Listado de componente</a></li>
 						<li><a class="dropdown-item" href="#" id="mnuListadoPorTipo">Listado de componente por tipo</a></li>
 					</ul>
 				</li>
@@ -201,6 +201,58 @@
 
 				</fieldset>
 			</form>
+
+			<form class="form-horizontal d-none" name="frmAltaComponente" id="frmAltaComponente" >
+				<fieldset>
+					<!-- Form Name -->
+					<legend>Alta de componente</legend>
+					
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtAltaNombre">Nombre del componente</label>
+						<div class="col-xs-4">
+							<input id="txtAltaNombre" name="txtAltaNombre"
+								class="form-control input-md" type="text">
+
+						</div>
+					</div>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtAltaDescripcion">Descripción</label>
+						<div class="col-xs-4">
+							<input id="txtAltaDescripcion" name="txtAltaDescripcion"
+								class="form-control input-md" type="text">
+						</div>
+					</div>
+					<!-- Number input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtAltaPrecio">Precio</label>
+						<div class="col-xs-4">
+							<input id="txtAltaPrecio" name="txtAltaPrecio" 
+								class="form-control input-md" type="number">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="lstAltaTipo">Tipo</label>
+						<div class="col-xs-4">
+							<select  class="form-select" name="lstAltaTipo" id="lstAltaTipo">
+
+							</select>
+						</div>
+					</div>
+					<!-- Button -->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="btnAceptarAltaComponente"></label>
+						<div class="col-xs-4">
+							<input type="button" id="btnAceptarAltaComponente" name="btnAceptarAltaComponente"
+								class="btn btn-primary" value="Aceptar" />
+						</div>
+					</div>
+
+				</fieldset>
+			</form>
+
+			<!-- componentes por precio-->
 
 			<form class="form-horizontal d-none" name="frmAltaComponente" id="frmAltaComponente" >
 				<fieldset>

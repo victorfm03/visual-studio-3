@@ -62,6 +62,13 @@ function ocultarFormularios() {
     document.querySelector("#listados").innerHTML = "";
 }
 
+function procesarListadoComponente(){
+    let respuesta= await(oEmpresa.listadoComponentes());
+
+    let listado = '<table class="table table-striped">';
+    listado += '<thead><tr><td></td>'
+}
+
 async function actualizarDesplegableTipos(idTipoSeleccionado) {
 
     let respuesta = await oEmpresa.getTipos();
