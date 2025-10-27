@@ -8,6 +8,8 @@ registrarEventos();
 // Registro de eventos
 function registrarEventos() {
     // Opciones de menú
+    document.querySelector("#mnuListadoPorPrecio").addEventListener("click", mostrarFormulario);
+
     document
         .querySelector("#mnuAltaTipo")
         .addEventListener("click", mostrarFormulario);
@@ -26,6 +28,8 @@ function registrarEventos() {
     frmListadoTipo.btnAceptarListadoPorTipo.addEventListener("click", procesarListadoPorTipo);
     frmModificarComponente.btnAceptarModComponente.addEventListener("click", procesarModificarComponente);
     frmAltaComponente.btnAceptarAltaComponente.addEventListener("click", procesarAltaComponente);
+    frmListadoPrecio.btnAceptarListadoPorPrecio.addEventListener("click", procesarListadoPrecio);
+
 }
 
 function mostrarFormulario(oEvento) {
@@ -34,6 +38,10 @@ function mostrarFormulario(oEvento) {
     ocultarFormularios();
 
     switch (opcionMenu) {
+        case "mnuListadoPorPrecio":
+            frmListadoPrecio.classList.remove("d-none");
+            break;
+
         case "mnuAltaTipo":
             frmAltaTipo.classList.remove("d-none");
             break;
@@ -57,16 +65,10 @@ function ocultarFormularios() {
     frmListadoTipo.classList.add("d-none");
     frmModificarComponente.classList.add("d-none");
     frmAltaComponente.classList.add("d-none");
+    frmListadoPrecio.classList.add("d-none");
     // Borrado del contenido de capas con resultados
     document.querySelector("#resultadoBusqueda").innerHTML = "";
     document.querySelector("#listados").innerHTML = "";
-}
-
-function procesarListadoComponente(){
-    let respuesta= await(oEmpresa.listadoComponentes());
-
-    let listado = '<table class="table table-striped">';
-    listado += '<thead><tr><td></td>'
 }
 
 async function actualizarDesplegableTipos(idTipoSeleccionado) {
@@ -365,4 +367,32 @@ function validarAltaComponente() {
     }
 
     return valido;
+}
+
+function procesarListadoPrecio(){
+    // Recuperar idTipo seleccionado
+    let idPrecio = frmListadoPrecio.lstPrecio.value;
+
+    let respuesta = await oEmpresa.listadoPorTipo(idTipo);
+
+    let tabla = "<table class='table table-striped' id='listadoPorTipo'>";
+    tabla += "<thead><tr><th>IDCOMPONENTE</th><th>NOMBRE</th><th>DESCRIPCION</th><th>PRECIO</th><th>TIPO</th><th>ACCION</th></tr></thead><tbody>";
+
+    for (let componente of respuesta.datos) {
+        tabla += "<tr><td>" + componente.idcomponente + "</td>";
+        tabla += "<td>" + componente.nombre + "</td>";
+        tabla += "<td>" + componente.descripcion + "</td>";
+        tabla += "<td>" + componente.precio + "</td>";
+        tabla += "<td>" + componente.tipo + "</td>";
+
+        tabla += "<td><button class='btn btn-primary' data-componente='" + JSON.stringify(componente) + "'><i class='bi bi-pencil-square'></i></button></td></tr>";
+    }
+
+    tabla += "</tbody></table>";
+
+    // Agregamos el contenido a la capa de listados
+    document.querySelector("#listados").innerHTML = tabla;
+    // Agregar manejador de evento para toda la tabla
+    document.querySelector("#listadoPorTipo").addEventListener('click', procesarBotonEditarComponente);
+
 }
