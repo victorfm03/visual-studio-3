@@ -12,11 +12,17 @@ WHERE c.idtipo = p.idtipo AND p.idtipo = $idtipo ORDER BY idcomponente ASC;";
 
 } else if(isset($_GET["txtPrecioMin"]) && isset($_GET["txtPrecioMax"])) {
 
-    echo"hola";
+    $precio_min= $_GET["txtPrecioMin"];
+    $precio_max= $_GET["txtPrecioMax"];
+
+    $sql = "SELECT c.*, p.descripcion AS tipodesc FROM componente c, tipo p 
+WHERE c.idtipo = p.idtipo AND p.idtipo = $idtipo ORDER BY idcomponente ASC;";
 
 }else { // No recibo idtipo para filtrar
     $sql = "SELECT c.*, p.descripcion AS tipodesc FROM componente c, tipo p 
-    WHERE c.idtipo = p.idtipo ORDER BY idcomponente ASC;";
+    WHERE c.idtipo = p.idtipo 
+    and c.precio between $precio_min and $precio_max
+    ORDER BY idcomponente ASC;";
 
 }
 
