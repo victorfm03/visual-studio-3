@@ -3,6 +3,7 @@ require_once("funcionesBD.php");
 
 $conexion = obtenerConexion();
 
+
 $sql = "SELECT idtipo,tipo FROM tipo ORDER BY idtipo ASC;";
 
 $resultado = mysqli_query($conexion, $sql);
