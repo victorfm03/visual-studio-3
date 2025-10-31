@@ -18,17 +18,18 @@ include_once("cabecera.html");
 
 <div class="container" id="formularios">
     <div class="row">
-        <form class="form-horizontal" action="listado_componentes.php" method="get">
+        <form class="form-horizontal" action="listado_tipo_nombre.php" method="get">
             <fieldset>
                 <!-- Form Name -->
-                <legend>Buscar componentes de un tipo</legend>
+                <legend>Buscar tipos de componentes por nombre</legend>
                 <div class="form-group">
-                    <label class="col-xs-4 control-label" for="lstTipo">Tipo de componente</label>
+                    <label class="col-xs-4 control-label" for="lstTipo">nombre del tipo</label>
                     <div class="col-xs-4">
-                        <input type="number" name="txtPrecioMin" id="txtPrecioMin" placeholder="minimo">
-                        <input type="number" name="txtPrecioMax" id="txtPrecioMax" placeholder="maximo">
+                        <input type="text" name="txtNombre" id="txtNombre" placeholder="r">
                     </div>
                 </div>
+
+
                 <!-- Button -->
                 <div class="form-group">
                     <label class="col-xs-4 control-label" for="btnAceptarBuscarComponentesTipo"></label>

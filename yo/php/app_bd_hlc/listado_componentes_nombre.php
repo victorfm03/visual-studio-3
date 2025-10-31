@@ -21,23 +21,14 @@ include_once("cabecera.html");
         <form class="form-horizontal" action="listado_componentes.php" method="get">
             <fieldset>
                 <!-- Form Name -->
-                <legend>Buscar componentes de un tipo</legend>
+                <legend>Buscar componentes por nombre</legend>
                 <div class="form-group">
-                    <label class="col-xs-4 control-label" for="lstTipo">Tipo de componente</label>
+                    <label class="col-xs-4 control-label" for="lstTipo">nombre de componente</label>
                     <div class="col-xs-4">
-                        <select name="lstTipo" id="lstTipo" class="form-select" aria-label="Default select example">
-                            <?php echo $options; ?>
-                        </select>
+                        <input type="text" name="txtNombre" id="txtNombre" placeholder="r">
                     </div>
                 </div>
 
-                <!--Text input -->
-                <div class="form-group">
-                    <label class="col-xs-4 control-label" for="btnAceptarBuscarComponentesTipo"></label>
-                    <div class="col-xs-4">
-                        <input type="text" id="txtBuscarComponentesNombre" name="txtBuscarComponentesNombre" class="btn btn-primary" value="Aceptar" />
-                    </div>
-                </div>
 
                 <!-- Button -->
                 <div class="form-group">
