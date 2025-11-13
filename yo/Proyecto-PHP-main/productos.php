@@ -268,6 +268,7 @@ if ($accion == 'borrar' && $id_producto) {
                         ?>
                     </tbody>
                 </table>
+                <?php endif;?>
 
             </div>
         </div>
@@ -359,6 +360,7 @@ if ($accion == 'borrar' && $id_producto) {
                             ?>
                         </tbody>
                     </table>
+                    <?php endif;?>
             </div>
         </div>
     </div>

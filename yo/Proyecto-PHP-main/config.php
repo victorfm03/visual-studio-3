@@ -6,7 +6,7 @@ function obtenerConexion()
 
     // Valores por defecto - puedes sobrescribirlos con variables de entorno
     $host = getenv('DB_HOST') ?: 'db';  // 'db' para Docker, '127.0.0.1' para conexión local
-    $user = getenv('DB_USER') ?: 'root';
+    $user = getenv('DB_USER') ?: 'nombreTest';
     $pass = getenv('DB_PASS') ?: 'test';
     $dbname = getenv('DB_NAME') ?: 'nova_vibe';
     $port = getenv('DB_PORT') ?: 3306;
