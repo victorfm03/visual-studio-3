@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-
+app.use(express.json())
 let notes = [
   { id: 1, content: "HTML is easy", important: true },
   { id: 2, content: "Browser can execute only JavaScript", important: false },
@@ -35,6 +35,15 @@ app.delete('/api/notes/:id', (request, response) => {
   notes = notes.filter(note => note.id !== id)
 
   response.status(204).end()
+})
+
+app.post('/api/notes',(request,response)=>{
+const note = request.body
+const id=notes[notes.length-1].id+1
+note.id=id
+notes.push(note)
+
+response.json(note)
 })
 
 const PORT = 3001;
