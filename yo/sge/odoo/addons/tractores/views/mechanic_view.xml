@@ -1,0 +1,9 @@
+<odoo>
+<data>
+
+    <record id="tractores.action_window_mechanic" model="ir.ui.view">
+        <field name="field_name">field_value</field>
+    </record>
+
+</data>
+</odoo>

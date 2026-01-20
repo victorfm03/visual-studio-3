@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="1">
+    
+        <!--Top meu item-->
+
+    <menuitem id="tractores.menu_root" name="Taller"/>
+
+    <!--menu categories-->
+    <menuitem
+        id="tractores.menu_1"
+        name="name"
+        parent=/>
+    
+    </data>
+    
+
+</odoo>
