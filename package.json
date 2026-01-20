@@ -1,9 +1,9 @@
 {
   "dependencies": {
-    "dotenv": "^17.2.3"
+    "dotenv": "^17.2.3",
+    "recharts": "^3.6.0"
   },
-    "overrides": {
+  "overrides": {
     "react-is": "^18.3.1"
   }
-  
 }
