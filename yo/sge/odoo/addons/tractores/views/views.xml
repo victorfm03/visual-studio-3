@@ -2,9 +2,9 @@
   <data>
     <!-- explicit list view definition -->
 <!--
-    <record model="ir.ui.view" id="tractores.list">
-      <field name="name">tractores list</field>
-      <field name="model">tractores.tractores</field>
+    <record model="ir.ui.view" id="auto_repair.list">
+      <field name="name">auto_repair list</field>
+      <field name="model">auto_repair.auto_repair</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
@@ -17,18 +17,18 @@
 
     <!-- actions opening views on models -->
 <!--
-    <record model="ir.actions.act_window" id="tractores.action_window">
-      <field name="name">tractores window</field>
-      <field name="res_model">tractores.tractores</field>
+    <record model="ir.actions.act_window" id="auto_repair.action_window">
+      <field name="name">auto_repair window</field>
+      <field name="res_model">auto_repair.auto_repair</field>
       <field name="view_mode">tree,form</field>
     </record>
 -->
 
     <!-- server action to the one above -->
 <!--
-    <record model="ir.actions.server" id="tractores.action_server">
-      <field name="name">tractores server</field>
-      <field name="model_id" ref="model_tractores_tractores"/>
+    <record model="ir.actions.server" id="auto_repair.action_server">
+      <field name="name">auto_repair server</field>
+      <field name="model_id" ref="model_auto_repair_auto_repair"/>
       <field name="state">code</field>
       <field name="code">
         action = {
@@ -42,19 +42,19 @@
 
     <!-- Top menu item -->
 <!--
-    <menuitem name="tractores" id="tractores.menu_root"/>
+    <menuitem name="auto_repair" id="auto_repair.menu_root"/>
 -->
     <!-- menu categories -->
 <!--
-    <menuitem name="Menu 1" id="tractores.menu_1" parent="tractores.menu_root"/>
-    <menuitem name="Menu 2" id="tractores.menu_2" parent="tractores.menu_root"/>
+    <menuitem name="Menu 1" id="auto_repair.menu_1" parent="auto_repair.menu_root"/>
+    <menuitem name="Menu 2" id="auto_repair.menu_2" parent="auto_repair.menu_root"/>
 -->
     <!-- actions -->
 <!--
-    <menuitem name="List" id="tractores.menu_1_list" parent="tractores.menu_1"
-              action="tractores.action_window"/>
-    <menuitem name="Server to list" id="tractores" parent="tractores.menu_2"
-              action="tractores.action_server"/>
+    <menuitem name="List" id="auto_repair.menu_1_list" parent="auto_repair.menu_1"
+              action="auto_repair.action_window"/>
+    <menuitem name="Server to list" id="auto_repair" parent="auto_repair.menu_2"
+              action="auto_repair.action_server"/>
 -->
   </data>
 </odoo>
