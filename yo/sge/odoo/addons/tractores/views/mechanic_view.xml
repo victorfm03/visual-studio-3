@@ -1,9 +1,46 @@
 <odoo>
-<data>
+    <data>
+        <record model="ir.ui.view" id="tractores.mechanic_tree">
+            <field name="name">Mecanicos</field>
+            <field name="model">tractores.mechanic</field>
+            <field name="arch" type="xml">
+                <tree string="Mecanicos">
+                    <field name="name"/>
+                    <field name="email"/>
+                    <field name="employee_id"/>
+                    <field name="phone"/>
+                    <field name="photo" widget="image"/>
+                    <field name="status"/>
+                    <field name="num_repairs"/>
+                </tree>
+            </field>
+        </record>
 
-    <record id="tractores.action_window_mechanic" model="ir.ui.view">
-        <field name="field_name">field_value</field>
-    </record>
+        <record model="ir.ui.view" id="tractores.mechanic_form">
+            <field name="name">Mecanicos</field>
+            <field name="model">tractores.mechanic</field>
+            <field name="arch" type="xml">
+                <form string="Mecanicos">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="email"/>
+                            <field name="employee_id"/>
+                            <field name="phone"/>
+                            <field name="photo" widget="image"/>
+                            <field name="status"/>
+                            <field name="num_repairs"/>
+                            <field name="repair_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
 
-</data>
+        <record model="ir.actions.act_window" id="tractores.action_window_mechanic">
+            <field name="name">Mecanicos</field>
+            <field name="res_model">tractores.mechanic</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
 </odoo>

@@ -36,3 +36,5 @@ class mechanic(models.Model):
         for record in self:
             record.num_repairs=len(record.repair_ids)
     
+
+    
