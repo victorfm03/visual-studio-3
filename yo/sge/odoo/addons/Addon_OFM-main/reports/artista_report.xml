@@ -1,0 +1,147 @@
+<odoo>
+    <template id="report_artista_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+
+                        <h2 class="text-center">Ficha del Artista</h2>
+                        <h4 class="text-center text-muted">
+                            <strong>Género Musical:</strong>
+                            <span t-field="o.genero_musical"/>
+                        </h4>
+                        <br/>
+
+                        <h3>Datos Personales</h3>
+                        <div class="row">
+                            <div class="col-12">
+                                <p>
+                                    <strong>Nombre:</strong>
+                                    <span t-field="o.nombre"/>
+                                </p>
+                                <p>
+                                    <strong>DNI:</strong>
+                                    <span t-field="o.dni"/>
+                                </p>
+                                <p>
+                                    <strong>Nacionalidad:</strong>
+                                    <span t-field="o.nacionalidad"/>
+                                </p>
+                                <p>
+                                    <strong>Fecha de Nacimiento:</strong>
+                                    <span t-field="o.fecha_nacimiento"/>
+                                </p>
+                            </div>
+                        </div>
+
+                        <br/>
+
+                        <h3>Especificaciones Técnicas</h3>
+                        <div class="row">
+                            <div class="col-12">
+                                <p>
+                                    <strong>Rider Técnico:</strong>
+                                    <span t-field="o.rider_tecnico"/>
+                                </p>
+                                <p>
+                                    <strong>Cache:</strong>
+                                    <span t-field="o.cache"/>
+                                </p>
+                            </div>
+                        </div>
+
+                        <br/>
+
+                        <h3>Actuaciones</h3>
+                        <div class="row">
+                            <div class="col-12">
+                                <p>
+                                    <strong>Actuaciones:</strong>
+                                    <span t-field="o.actuacion_ids"/>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
+
+<!--
+Version mejorada
+<template id="report_artista_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page" style="font-size: 15px;">
+                        
+                        <div class="text-center mb-4">
+                            <h2 style="color: #2c3e50; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px;">
+                                FICHA ARTÍSTICA
+                            </h2>
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-12">
+                                <div style="background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 10px; padding: 20px;">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <span style="color: #7f8c8d; font-size: 12px;">NOMBRE DEL ARTISTA</span>
+                                            <h3 style="margin-top: 0px; color: #2c3e50;" t-field="o.nombre"/>
+                                        </div>
+                                        <div class="col-4 text-right">
+                                            <span style="color: #7f8c8d; font-size: 12px;">GÉNERO</span><br/>
+                                            <span class="badge badge-dark p-2" style="font-size: 14px;" t-field="o.genero_musical"/>
+                                        </div>
+                                    </div>
+                                    <hr style="border-top: 1px solid #dcdcdc;"/>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <strong>DNI / ID:</strong> <span t-field="o.dni"/>
+                                        </div>
+                                        <div class="col-6">
+                                            <strong>Nacionalidad:</strong> <span t-field="o.nacionalidad"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-5">
+                            <div class="col-12">
+                                <h4 style="color: #2c3e50; margin-bottom: 15px;">Información Técnica y Económica</h4>
+                                
+                                <table class="table table-bordered">
+                                    <thead style="background-color: #2c3e50; color: white;">
+                                        <tr>
+                                            <th style="width: 30%;">Caché Acordado</th>
+                                            <th style="width: 70%;">Rider Técnico (Requisitos)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="vertical-align: middle;">
+                                                <h4 style="margin: 0;">
+                                                    <span t-field="o.cache"/> €
+                                                </h4>
+                                            </td>
+                                            <td>
+                                                <span t-field="o.rider_tecnico"/>
+                                                <t t-if="not o.rider_tecnico">
+                                                    <em style="color: #999;">Sin requisitos técnicos especificados.</em>
+                                                </t>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+-->

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report 
+        id="action_report_artista" 
+        string="Ficha del Artista" 
+        model="ofm.artista" 
+        report_type="qweb-pdf" 
+        name="ofm.report_artista_template" 
+        file="ofm.report_artista_template"
+    />
+
+    <report 
+        id="action_report_staff" 
+        string="Ficha del Personal" 
+        model="ofm.staff" 
+        report_type="qweb-pdf" 
+        name="ofm.report_staff_template" 
+        file="ofm.report_staff_template"
+    />
+
+    <report 
+        id="action_report_entrada" 
+        string="Ficha de la Entrada" 
+        model="ofm.entrada" 
+        report_type="qweb-pdf" 
+        name="ofm.report_entrada_template" 
+        file="ofm.report_entrada_template"
+    />
+
+    <report 
+        id="action_report_actuacion" 
+        string="Ficha de la Actuacion" 
+        model="ofm.actuacion" 
+        report_type="qweb-pdf" 
+        name="ofm.report_actuacion_template" 
+        file="ofm.report_actuacion_template"
+    />
+</odoo>

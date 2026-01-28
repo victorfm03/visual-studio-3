@@ -1,0 +1,122 @@
+<odoo>
+  <data>
+
+    <record id="artista_list_action" model="ir.actions.act_window">
+      <field name="name">Artista</field>
+      <field name="res_model">ofm.artista</field>
+      <field name="view_mode">tree,kanban,form,graph</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">Crea al primer Artista</p>
+      </field>
+    </record>
+
+    <!-- FORM -->
+    <record id="ofm_artista_form_view" model="ir.ui.view">
+      <field name="name">ofm.artista.form</field>
+      <field name="model">ofm.artista</field>
+      <field name="arch" type="xml">
+        <form string="Artistas">
+          <sheet layout="auto">
+            <notebook>
+              <page name="datosPersonales" string="Datos Personales">
+                <group>
+                  <field name="nombre" />
+                  <field name="nacionalidad" />
+                  <field name="fecha_nacimiento" />
+                  <field name="activo" />
+                  <field name="dni" />
+                </group>
+              </page>
+              <page name="datosProfesionales" string="Datos Profesionales">
+                <group>
+                  <field name="genero_musical" />
+                  <field name="cache" />
+                  <field name="rider_tecnico" />
+                </group>
+              </page>
+              <page name="actuaciones" string="Actuaciones">
+                <field name="actuacion_ids">
+                  <tree>
+                    <field name="name"/>
+                    <field name="fecha_inicio"/>
+                    <field name="fecha_fin"/>
+                    <field name="cant_entradas"/>
+                  </tree>
+                </field>
+              </page>
+            </notebook>
+
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- TREE -->
+    <record id="ofm_artista_tree_view" model="ir.ui.view">
+      <field name="name">ofm.artista.tree</field>
+      <field name="model">ofm.artista</field>
+      <field name="arch" type="xml">
+        <tree string="tree_string">
+          <field name="nombre" />
+          <field name="genero_musical" />
+          <field name="nacionalidad"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- GRAFICA -->
+    <record model="ir.ui.view" id="ofm_artista_graph">
+      <field name="name">Artistas</field>
+      <field name="model">ofm.artista</field>
+      <field name="arch" type="xml">
+        <graph string="Presupuesto por Género Musical" type="pie">
+          <field name="genero_musical" type="row"/>
+          <field name="cache" type="measure"/>
+        </graph>
+      </field>
+    </record>
+
+    <!-- KANBAN -->
+    <record id="ofm_artista_kanban_view" model="ir.ui.view">
+      <field name="name">ofm.artista.kanban</field>
+      <field name="model">ofm.artista</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <templates>
+            <t t-name="kanban-box">
+              <!-- La tarjeta en si -->
+              <div class="oe_kanban_global_click">
+
+                <!-- Titulo de la tarjeta-->
+                <div class="o_kanban_record_top">
+                  <!-- El titulo es el nombre del artista -->
+                  <strong class="o_kanban_record_title">
+                    <field name="nombre"/>
+                  </strong>
+                </div>
+
+                <!-- Cuerpo de la tarjeta -->
+                <div class="o_kanban_record_body">
+                  <div>
+                    <!-- Icono de musica y genero musical-->
+                    <span class="fa fa-music"/>
+                    <field name="genero_musical"/>
+                  </div>
+                  <div>
+                    <!-- Cache el artista -->
+                    <strong>Caché: </strong>
+                    <field name="cache"/>
+€
+                  </div>
+                </div>
+
+              </div>
+            </t>
+          </templates>
+        </kanban>
+
+      </field>
+    </record>
+
+  </data>
+</odoo>
