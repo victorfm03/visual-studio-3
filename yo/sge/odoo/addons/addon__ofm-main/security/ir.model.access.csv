@@ -1,2 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_addon__ofm-main_addon__ofm-main,addon__ofm-main.addon__ofm-main,model_addon__ofm-main_addon__ofm-main,base.group_user,1,1,1,1
