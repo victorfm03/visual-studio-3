@@ -1,36 +1,24 @@
 from odoo import models, fields, api
 
 class Patrocinador(models.Model):
-    _name = "fiesta.patrocinador"
+    _name = "ofm.patrocinador"
     _description = "patrocinador de la fiesta"
-
-    dni = fields.Text(
-        string='DNI del patrocinador',
-    )
     
-
     name = fields.Char(
         string='Nombre del patrocinador',
-        required=True, unique=True
-    )
-
-    empresa_asociada = fields.Text(
-        string='Nombre de la empresa asociada',
         required=True
     )
 
-    edad = fields.Integer(string="Edad", required=True, readonly=True, compute="_compute_edad")
+    pais = fields.Many2one("res.country", "Pais")
 
-
-    ubicacion = fields.Text(string="Ubicación del patrocinador")
-
-    patrocinadores_ids = fields.One2many(
-    comodel_name="fiesta.artista",
-    inverse_name="patrocinador_id",
-    string="Artistas"
+    escenarios_ids = fields.Many2many(
+    comodel_name="ofm.escenario",
+    string="Escenarios"
 )
+    
+    numero_de_escenarios = fields.Integer(string="Cantidad de escenarios patrocinados", compute="_compute_cant_escenarios", store=True)
 
-    @api.depends('patrocinadores_ids')
-    def _compute_cant_actuaciones(self):
+    @api.depends('escenarios_ids')
+    def _compute_cant_escenarios(self):
         for record in self:
-            record.numero_de_actuaciones = len(record.patrocinadors_ids)
+            record.numero_de_escenarios = len(record.escenarios_ids)
