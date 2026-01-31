@@ -1,4 +1,6 @@
 from odoo import models, fields, api
+from odoo.exceptions import UserError, ValidationError
+
 
 class Escenario(models.Model):
     _name = "ofm.escenario"
@@ -13,6 +15,13 @@ class Escenario(models.Model):
     ubicacion = fields.Text(string="Ubicación del escenario")
 
     tema = fields.Text(string="Tema del escenario")
+
+    state= fields.Selection(
+        selection=[('en_proceso', 'En_proceso'), ('terminado', 'Terminado'), ('cancelado', 'Cancelado')],
+        default='en_proceso',
+        required=True
+    )
+    
 
     actuaciones_ids = fields.One2many(
     comodel_name="ofm.actuacion",
@@ -36,3 +45,19 @@ class Escenario(models.Model):
     def _compute_cant_patrocinadores(self):
         for record in self:
             record.numero_de_patrocinadores = len(record.patrocinadores_ids)
+
+    def action_escenario_terminado(self):
+        self.write({'state': 'terminado'})
+
+    def action_escenario_cancelado(self):
+        self.write({'state': 'cancelado'})
+
+    def action_escenario_en_proceso(self):
+        self.write({'state': 'en_proceso'})
+
+    @api.constrains('patrocinadores_ids', 'state')
+    def _check_escenario_patrocinado(self):
+        for record in self:
+            for patrocinador in record.patrocinadores_ids:
+                if patrocinador.state != 'activo':
+                    raise ValidationError("El escenario solo puede tener patrocinadores activos.")
